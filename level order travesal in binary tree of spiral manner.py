@@ -5,10 +5,14 @@ class TreeNode:
         self.left = None
         self.right = None
 
+    def spiral_level_order(root):
+        if not root:
+            return []
+
 
         result = []
         queue = deque([root])
-        left_to_right= root
+        left_to_right= True
 
         while queue:
             level_size = len(queue)
@@ -27,4 +31,15 @@ class TreeNode:
                 if node.right:
                     queue.append(node.right)
             result.append(list(current_level))
-            left_to_right
+            left_to_right = not left_to_right
+        return result
+
+if '__name__' == '__main__':
+    
+    root = TreeNode(1)
+    root.left = TreeNode(2)
+    root.right = TreeNode(3)
+    root.left.left = TreeNode(4)
+    root.left.right = TreeNode(5)
+    root.right.left = TreeNode(6)
+    root.right.right  = TreeNode(7)

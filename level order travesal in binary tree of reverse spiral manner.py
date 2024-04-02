@@ -23,7 +23,7 @@
 #                 node.left = TreeNode(key)
 
 
-from collection import deque
+from collections import deque
 
 class TreeNode:
     def __init__(self,data):
